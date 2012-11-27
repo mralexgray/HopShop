@@ -1,85 +1,52 @@
-// Copyright (C) 2012 Rob Warner, rwarner@grailbox.com
-//
-// Released under the MIT license (http://www.opensource.org/licenses/MIT)
-//                                
-// Permission is hereby granted, free of charge, to any person obtaining a copy 
-// of this software and associated documentation files (the "Software"), to deal 
-// in the Software without restriction, including without limitation the rights to 
-// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of 
-// the Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-//                                
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-//                                
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 #import "HopShopAppDelegate.h"
-#import "OutputWindowViewController.h"
+#import "VisualControllers.h"
 #import "Brew.h"
-#import "HopShopConstants.h"
+//#import "HopShopConstants.h"
+#import "Formula.h"
 
 @implementation HopShopAppDelegate
 
-@synthesize window = _window;
-@synthesize updateItem = _updateItem;
+#define fm [NSFileManager defaultManager]
 
 + (HopShopAppDelegate *)delegate
 {
-  return (HopShopAppDelegate *)[[NSApplication sharedApplication] delegate];
+	return (HopShopAppDelegate *)[[NSApplication sharedApplication] delegate];
+}
+- (NSS *)pathForAppData
+{
+	NSS *folder = [@"~/Library/Application Support/HopShop/" stringByExpandingTildeInPath];
+	NSError *error;
+	if (![fm fileExistsAtPath:folder])
+		if (![fm createDirectoryAtPath:folder withIntermediateDirectories:YES attributes:nil error:&error])
+			[self showError:@"Can't create directory!"];
+	return folder;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-  // Insert code here to initialize your application
-}
-
-- (NSString *)pathForAppData 
-{
-  NSFileManager *fileManager = [NSFileManager defaultManager];  
-  NSString *folder = [@"~/Library/Application Support/HopShop/" stringByExpandingTildeInPath];
-  
-  if (![fileManager fileExistsAtPath:folder]) {
-    NSError *error;
-    if (![fileManager createDirectoryAtPath:folder withIntermediateDirectories:YES attributes:nil error:&error]) {
-      [self showError:@"Can't create directory!"];
-      // TODO Couldn't create dir
-    }
-  }
-  return folder;
-}
-
-- (void)showError:(NSString *)errorMessage 
-{
-  
-}
+- (void)showError:(NSS *)errorMessage {}
 
 #pragma mark - BrewDelegate methods
 
-- (void)outputReceived:(NSString *)output
+- (void)outputReceived:(NSS *)output
 {
-  [[NSNotificationCenter defaultCenter] postNotificationName:NotificationOutputReceived object:output];
+	[AZNOTCENTER postNotificationName:NotificationOutputReceived object:output];
 }
 
-- (void)updateDidComplete:(NSString *)output
+- (void)updateDidComplete:(NSS *)output
 {
-  [self.updateItem setEnabled:YES];
-  [[NSNotificationCenter defaultCenter] postNotificationName:NotificationUpdateCompleted object:output];
+	self.updateItem.enabled = YES;
+	[AZNOTCENTER postNotificationName:NotificationUpdateCompleted object:output];
 }
 
 #pragma mark - Toolbar Item handlers
 
 - (IBAction)brewUpdate:(id)sender
 {
-  [[NSNotificationCenter defaultCenter] postNotificationName:NotificationOutputReceived object:@"Updating . . ."];
-  [self.updateItem setEnabled:NO];
-  Brew *brew = [[Brew alloc] initWithDelegate:self];
-  [brew update];
+	[AZNOTCENTER postNotificationName:NotificationOutputReceived object:@"Updating . . ."];
+	self.updateItem.enabled = NO;
+	Brew *brew = [[Brew alloc] initWithDelegate:self];
+	[brew update];
 }
 
 @end

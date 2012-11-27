@@ -44,11 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C74875C51554862A00253576 /* InstalledFormulaeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstalledFormulaeViewController.h; sourceTree = "<group>"; };
+		C74875C51554862A00253576 /* VisualControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = VisualControllers.h; sourceTree = "<group>"; };
 		C74875C61554862A00253576 /* InstalledFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstalledFormulaeViewController.m; sourceTree = "<group>"; };
-		C74875C91555188E00253576 /* AvailableFormulaeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableFormulaeViewController.h; sourceTree = "<group>"; };
 		C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableFormulaeViewController.m; sourceTree = "<group>"; };
-		C74875CC1555236600253576 /* OutputWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputWindowViewController.h; sourceTree = "<group>"; };
 		C74875CD1555236600253576 /* OutputWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputWindowViewController.m; sourceTree = "<group>"; };
 		C757428F1562BA4D00D038AB /* HopShopConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HopShopConstants.h; sourceTree = "<group>"; };
 		C75742901562BA4D00D038AB /* HopShopConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HopShopConstants.m; sourceTree = "<group>"; };
@@ -112,11 +110,9 @@
 		C74875C81554863C00253576 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C74875C51554862A00253576 /* InstalledFormulaeViewController.h */,
+				C74875C51554862A00253576 /* VisualControllers.h */,
 				C74875C61554862A00253576 /* InstalledFormulaeViewController.m */,
-				C74875C91555188E00253576 /* AvailableFormulaeViewController.h */,
 				C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */,
-				C74875CC1555236600253576 /* OutputWindowViewController.h */,
 				C74875CD1555236600253576 /* OutputWindowViewController.m */,
 			);
 			name = ViewControllers;
@@ -450,7 +446,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				OTHER_LDFLAGS = (
+					"-framework",
+					AtoZ,
+				);
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -470,18 +470,28 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				OTHER_LDFLAGS = (
+					"-framework",
+					AtoZ,
+				);
+				SDKROOT = "";
 			};
 			name = Release;
 		};
 		C78F358E154F73EA00834DE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
 				INFOPLIST_FILE = "HopShop/HopShop-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-framework",
+					AtoZ,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -489,11 +499,17 @@
 		C78F358F154F73EA00834DE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
 				INFOPLIST_FILE = "HopShop/HopShop-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-framework",
+					AtoZ,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

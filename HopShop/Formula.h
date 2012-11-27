@@ -1,36 +1,22 @@
-// Copyright (C) 2012 Rob Warner, rwarner@grailbox.com
-//
-// Released under the MIT license (http://www.opensource.org/licenses/MIT)
-//                                
-// Permission is hereby granted, free of charge, to any person obtaining a copy 
-// of this software and associated documentation files (the "Software"), to deal 
-// in the Software without restriction, including without limitation the rights to 
-// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of 
-// the Software, and to permit persons to whom the Software is furnished to do so, 
-// subject to the following conditions:
-//                                
-// The above copyright notice and this permission notice shall be included in all 
-// copies or substantial portions of the Software.
-//                                
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 #import <Foundation/Foundation.h>
 #import "Brew.h"
 
-@interface Formula : NSObject<BrewDelegate>
+// Notifications
+extern NSS * const NotificationClearOutput;
+extern NSS * const NotificationInfoReceived;
+extern NSS * const NotificationFormulaeSelected;
+extern NSS * const NotificationUpdateCompleted;
+extern NSS * const NotificationOutputReceived;
 
-@property (strong) NSString *name;
-@property (strong) NSString *version;
-@property (strong) NSString *info;
-@property (nonatomic) BOOL installed;
-@property (nonatomic) BOOL outdated;
 
-- (id)initWithName:(NSString *)name;
-- (NSAttributedString *)fancyDescription;
+@interface Formula : NSObject <BrewDelegate>
+
+@property (NATOM,STRNG) NSS *name, *version, *info;
+@property (NATOM) 		BOOL installed, outdated;
+@property (RONLY)   	NSAS *fancyDescription;
+
+- (id)initWithName: (NSS*)name;
 
 @end

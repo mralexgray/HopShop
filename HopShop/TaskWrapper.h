@@ -1,16 +1,16 @@
 /*
- File:      TaskWrapper.h
+ File:			TaskWrapper.h
  
- Description:   This class is a generalized process handling class that makes asynchronous interaction with an NSTask easier.  There is also a protocol designed to work in conjunction with the TaskWrapper class; your process controller should conform to this protocol.  TaskWrapper objects are one-shot (since NSTask is one-shot); if you need to run a task more than once, destroy/create new TaskWrapper objects.
+ Description:	 This class is a generalized process handling class that makes asynchronous interaction with an NSTask easier.	There is also a protocol designed to work in conjunction with the TaskWrapper class; your process controller should conform to this protocol.	TaskWrapper objects are one-shot (since NSTask is one-shot); if you need to run a task more than once, destroy/create new TaskWrapper objects.
  
- Author:        EP & MCF
+ Author:				EP & MCF
  
- Copyright:     © Copyright 2002 Apple Computer, Inc. All rights reserved.
+ Copyright:		 © Copyright 2002 Apple Computer, Inc. All rights reserved.
  
- Disclaimer:    IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc.
+ Disclaimer:		IMPORTANT:	This Apple software is supplied to you by Apple Computer, Inc.
  ("Apple") in consideration of your agreement to the following terms, and your
  use, installation, modification or redistribution of this Apple software
- constitutes acceptance of these terms.  If you do not agree with these terms,
+ constitutes acceptance of these terms.	If you do not agree with these terms,
  please do not use, install, modify or redistribute this Apple software.
  
  In consideration of your agreement to abide by the following terms, and subject
@@ -20,15 +20,15 @@
  modifications, in source and/or binary forms; provided that if you redistribute
  the Apple Software in its entirety and without modifications, you must retain
  this notice and the following text and disclaimers in all such redistributions of
- the Apple Software.  Neither the name, trademarks, service marks or logos of
+ the Apple Software.	Neither the name, trademarks, service marks or logos of
  Apple Computer, Inc. may be used to endorse or promote products derived from the
- Apple Software without specific prior written permission from Apple.  Except as
+ Apple Software without specific prior written permission from Apple.	Except as
  expressly stated in this notice, no other rights or licenses, express or implied,
  are granted by Apple herein, including but not limited to any patent rights that
  may be infringed by your derivative works or by other works in which the Apple
  Software may be incorporated.
  
- The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+ The Apple Software is provided by Apple on an "AS IS" basis.	APPLE MAKES NO
  WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
  WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
  PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
@@ -51,7 +51,7 @@
 
 // Your controller's implementation of this method will be called when output arrives from the NSTask.
 // Output will come from both stdout and stderr, per the TaskWrapper implementation.
-- (void)appendOutput:(NSString *)output;
+- (void)appendOutput:(NSS *)output;
 
 // This method is a callback which your controller can use to do other initialization when a process
 // is launched.
@@ -64,14 +64,14 @@
 @end
 
 @interface TaskWrapper : NSObject {
-    NSTask          *task;
-    id              <TaskWrapperController>controller;
-    NSArray         *arguments;
+		NSTask					*task;
+		id							<TaskWrapperController>controller;
+		NSArray				 *arguments;
 }
 
 // This is the designated initializer - pass in your controller and any task arguments.
 // The first argument should be the path to the executable to launch with the NSTask.
-- (id)initWithController:(id <TaskWrapperController>)controller arguments:(NSArray *)args;
+- (id)initWithController:(id <TaskWrapperController>)controller arguments:(NSA*)args;
 
 // This method launches the process, setting up asynchronous feedback notifications.
 - (void) startProcess;
