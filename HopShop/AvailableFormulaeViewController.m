@@ -4,6 +4,8 @@
 #import "HopShopAppDelegate.h"
 #import "HopShopConstants.h"
 #import "Formula.h"
+#import <AtoZ/AtoZ.h>
+
 
 #define kAvailableFormulaeFile @"available_formulae.plist"
 
@@ -80,6 +82,11 @@ NSPredicate *formulaePredicate;
 - (void)tableViewSelectionDidChange: (NSNOT*)note 
 {
 	loading ?: ^{
+		[[[arrayController selectedObjects]filter:^BOOL(Formula* object) {
+			return object.desc == nil;
+		}]each:^(Formula* obj) {
+			obj.desc = [FormulaDescriptions googleSearchFor:obj.name];
+		}];
 		[AZNOTCENTER postNotificationName:NotificationClearOutput object:nil];
 		![[arrayController selectedObjects] count] > 0 ?:
 			[AZNOTCENTER postNotificationName:NotificationFormulaeSelected object:[arrayController selectedObjects]];

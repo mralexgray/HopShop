@@ -67,11 +67,14 @@
 		NSTask					*task;
 		id							<TaskWrapperController>controller;
 		NSArray				 *arguments;
+		NSS 				*pathAddition;
 }
 
 // This is the designated initializer - pass in your controller and any task arguments.
 // The first argument should be the path to the executable to launch with the NSTask.
 - (id)initWithController:(id <TaskWrapperController>)controller arguments:(NSA*)args;
+- (id)initWithController:(id <TaskWrapperController>)controller arguments:(NSA*)args appendPath:(NSS*)pathEnv;
+
 
 // This method launches the process, setting up asynchronous feedback notifications.
 - (void) startProcess;

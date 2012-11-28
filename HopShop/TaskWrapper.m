@@ -55,14 +55,19 @@
 
 @implementation TaskWrapper
 
+- (id)initWithController:(id <TaskWrapperController>)cont arguments:(NSA*)args appendPath:(NSString *)pathEnv
+{
+	if (!(self = [super init])) return nil;
+	controller 		= cont;
+	arguments 		= args;
+	pathAddition  	= pathEnv;
+	return self;
+}
+
 // Do basic initialization
 - (id)initWithController:(id <TaskWrapperController>)cont arguments:(NSA*)args
 {
-		self = [super init];
-		controller = cont;
-		arguments = args;
-		
-		return self;
+	return [self initWithController:cont arguments:args appendPath:nil];
 }
 
 // tear things down
@@ -78,6 +83,20 @@
 		[controller processStarted];
 		
 		task = [[NSTask alloc] init];
+
+		if (pathAddition != nil) {
+			char* user = getenv("USER");
+			char* home = getenv("HOME");
+			NSString *newHome = [[NSString alloc] initWithUTF8String: user];
+			NSString *newUser = [[NSString alloc] initWithUTF8String: home];
+			NSLog(@"user: %@  home: %@", newUser, newHome);
+
+			char* envPath = getenv("PATH");
+			NSString *newPath = [[NSString alloc] initWithUTF8String: envPath];
+			newPath = $(@"%@:%@", newPath, pathAddition);
+			NSLog(@"taskPath:%@", newPath);
+			[task setEnvironment:@{@"PATH":newPath, @"HOME": newUser}];
+		}
 		// The output of stdout and stderr is sent to a pipe so that we can catch it later
 		// and send it along to the controller; notice that we don't bother to do anything with stdin,
 		// so this class isn't as useful for a task that you need to send info to, not just receive.

@@ -21,7 +21,6 @@
 @property (strong) IBOutlet NSSearchField 		*searchField;
 @property (strong) 			NSMutableArray 		*availableFormulae;
 @property (assign) 			BOOL 				loading;
-@property (strong) 			NSMutableArray 		*availableFormulae;
 
 
 

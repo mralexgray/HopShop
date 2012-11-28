@@ -10,6 +10,14 @@
 
 #define fm [NSFileManager defaultManager]
 
+- (void) applicationWillTerminate:(NSNotification *)notification {
+	[[NSThread mainThread] performBlock:^{
+		[FormulaDescriptions saveNewEntriesToDisk];
+	}waitUntilDone:YES];
+}
+//must Initialize the value transformers used throughout the application bindings
++ (void)initialize{ [NSVT setValueTransformer:[BoolToImageTransformer new] forName:@"BoolToImageTransformer"];	}
+
 + (HopShopAppDelegate *)delegate
 {
 	return (HopShopAppDelegate *)[[NSApplication sharedApplication] delegate];

@@ -17,6 +17,7 @@
 - (void) outputReceived:		(NSS*) output;
 - (void) appendOutput:		 	(NSS*) output;
 - (void) processFinished:		(NSS*) output;
+- (void) descDidComplete:		(NSS*) output;
 - (void) processStarted;
 @end
 
@@ -29,7 +30,8 @@ typedef NS_ENUM(NSUI, BrewOperation) {
 	BrewOperationUpgrade,
 	BrewOperationInstall,
 	BrewOperationUninstall,
-	BrewOperationOutdated
+	BrewOperationOutdated,
+	BrewOperationDesc
 };
 
 
@@ -39,10 +41,11 @@ typedef NS_ENUM(NSUI, BrewOperation) {
 @property (NATOM) BrewOperation  currentOperation;
 @property (STRNG) NSS 			*currentOutput;
 @property (STRNG) TaskWrapper 	*brewTask;
-@property (ASS)id <BrewDelegate> delegate;
+@property (STRNG)id <BrewDelegate> delegate;
 
 - (id)   initWithDelegate:(id<BrewDelegate>)delegate;
 
+- (void) desc:		(NSS*)searchString;
 - (void) search:	(NSS*)searchString;
 - (void) list:		(NSA*)formulae;
 - (void) install:	(NSA*)formulae;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B9BB2F31664C735001B59F9 /* brew-desc.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F21664C735001B59F9 /* brew-desc.rb */; };
+		7B9BB2F71664E175001B59F9 /* descriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F61664E175001B59F9 /* descriptions.plist */; };
+		7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */; };
 		C74875C4155480C600253576 /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F359E1550A8BC00834DE2 /* TaskWrapper.m */; };
 		C74875C71554862A00253576 /* InstalledFormulaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875C61554862A00253576 /* InstalledFormulaeViewController.m */; };
 		C74875CB1555188E00253576 /* AvailableFormulaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */; };
@@ -44,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B9BB2F21664C735001B59F9 /* brew-desc.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = "brew-desc.rb"; path = "brew-desc/brew-desc.rb"; sourceTree = SOURCE_ROOT; };
+		7B9BB2F61664E175001B59F9 /* descriptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = descriptions.plist; sourceTree = "<group>"; };
+		7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = FormulaDescriptions.h; sourceTree = "<group>"; };
+		7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormulaDescriptions.m; sourceTree = "<group>"; };
 		C74875C51554862A00253576 /* VisualControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = VisualControllers.h; sourceTree = "<group>"; };
 		C74875C61554862A00253576 /* InstalledFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstalledFormulaeViewController.m; sourceTree = "<group>"; };
 		C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableFormulaeViewController.m; sourceTree = "<group>"; };
@@ -170,6 +177,10 @@
 				C78F3566154F73EA00834DE2 /* Supporting Files */,
 				C7D39EC41555D09500D603A7 /* Formula.h */,
 				C7D39EC51555D09500D603A7 /* Formula.m */,
+				7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */,
+				7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */,
+				7B9BB2F21664C735001B59F9 /* brew-desc.rb */,
+				7B9BB2F61664E175001B59F9 /* descriptions.plist */,
 				C757428F1562BA4D00D038AB /* HopShopConstants.h */,
 				C75742901562BA4D00D038AB /* HopShopConstants.m */,
 			);
@@ -287,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HopShop;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Grailbox;
 			};
 			buildConfigurationList = C78F3555154F73EA00834DE2 /* Build configuration list for PBXProject "HopShop" */;
@@ -321,6 +332,8 @@
 				C7C6152E156DCECD00EB2CD5 /* uninstall.png in Resources */,
 				C7C61530156DCF4A00EB2CD5 /* update.png in Resources */,
 				C7C61532156DD19800EB2CD5 /* upgrade.png in Resources */,
+				7B9BB2F31664C735001B59F9 /* brew-desc.rb in Resources */,
+				7B9BB2F71664E175001B59F9 /* descriptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +377,7 @@
 				C74875CE1555236600253576 /* OutputWindowViewController.m in Sources */,
 				C7D39EC61555D09500D603A7 /* Formula.m in Sources */,
 				C75742911562BA4D00D038AB /* HopShopConstants.m in Sources */,
+				7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +495,7 @@
 		C78F358E154F73EA00834DE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
@@ -499,6 +514,7 @@
 		C78F358F154F73EA00834DE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
@@ -518,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HopShop.app/Contents/MacOS/HopShop";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
@@ -532,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HopShop.app/Contents/MacOS/HopShop";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";

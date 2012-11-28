@@ -1,7 +1,8 @@
 
 
 #import "Formula.h"
-//#import "HopShopConstants.h"
+#import "FormulaDescriptions.h"
+
 
 
 // Notifications
@@ -19,6 +20,7 @@ NSS * const NotificationOutputReceived = @"notification_output_received";
 @implementation Formula
 
 static NSS *KeyName = @"name";
+static NSS *KeyDesc = @"desc";
 static NSS *KeyVersion = @"version";
 static NSS *KeyInfo = @"info";
 static NSS *KeyInstalled = @"installed";
@@ -28,12 +30,21 @@ static NSS *KeyOutdated = @"outdated";
 {
 	if (!(self = [super init])) return nil;
 	self.name = name_;
+//	[NSThread performBlockInBackground:^{
+	self.desc = [FormulaDescriptions descriptionForName:_name];
+//		 if (google) {
+//		 	[[NSThread mainThread] performBlock:^{
+//				self.desc = google.copy;
+//			} waitUntilDone:YES];
+//		}
+	
 	return self;
 }
 
 - (id)initWithCoder:(NSCoder *)decoder 
 {
 	if (!(self = [super init])) return nil;
+	_desc = [decoder decodeObjectForKey:KeyDesc];
 	_name = [decoder decodeObjectForKey:KeyName];
 	_version = [decoder decodeObjectForKey:KeyVersion];
 	_info = [decoder decodeObjectForKey:KeyInfo];
@@ -45,6 +56,7 @@ static NSS *KeyOutdated = @"outdated";
 - (void)encodeWithCoder:(NSCoder *)encoder 
 {
 	[encoder encodeObject:_name forKey:KeyName];
+	[encoder encodeObject:_desc forKey:KeyDesc];
 	[encoder encodeObject:_version forKey:KeyVersion];
 	[encoder encodeObject:_info forKey:KeyInfo];
 	[encoder encodeObject:@(self.installed) forKey:KeyInstalled];
@@ -105,5 +117,11 @@ static NSS *KeyOutdated = @"outdated";
 	}	}();
 	[AZNOTCENTER postNotificationName:NotificationInfoReceived object:@[self]];
 }
+
+//- (void) descDidComplete:(NSString *)output
+//{
+//	NSLog(@"output: %@", output);
+//	self.desc = output;
+//}
 
 @end

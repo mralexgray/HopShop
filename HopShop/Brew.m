@@ -21,7 +21,8 @@ static NSDictionary *operations;
 					@(BrewOperationUpdate): 	@"update",
 					@(BrewOperationUpgrade): 	@"upgrade",
 					@(BrewOperationInfo): 		@"info",
-					@(BrewOperationOutdated):	@"outdated"};
+					@(BrewOperationOutdated):	@"outdated",
+					@(BrewOperationDesc):		@"desc"};
 }
 
 - (id)initWithDelegate:(id<BrewDelegate>)delegate
@@ -49,9 +50,17 @@ static NSDictionary *operations;
 
 - (void)outdated				 {	[self runTask:BrewOperationOutdated  arguments:     nil];	}
 
+- (void)desc:(NSS*)srchStr	 	 {	[self runTask:BrewOperationDesc    arguments: @[ @"-s", srchStr ?: @""] appendPath:[[NSB mainBundle]resourcePath]];  }
+
 #pragma mark - Helper methods
 
+
 - (void)runTask:(BrewOperation)operation arguments:(NSA*)arguments
+{
+	[self runTask:operation arguments:arguments appendPath:nil];
+}
+
+- (void)runTask:(BrewOperation)operation arguments:(NSA*)arguments appendPath:(NSS*)newPath
 {
 	isRunning ? ^{
 		[self.brewTask stopProcess];
@@ -61,7 +70,7 @@ static NSDictionary *operations;
 		currentOperation = operation;
 		NSArray *cmdLine = [self buildCommandLine:operation arguments:(NSA*)arguments];
 //		NSLog(@"sending cmd: %@", cmdLine);
-		self.brewTask = [[TaskWrapper alloc] initWithController:self arguments:cmdLine];
+		self.brewTask = [[TaskWrapper alloc] initWithController:self arguments:cmdLine appendPath:newPath];
 		[self.brewTask startProcess];
 	}();
 }
@@ -72,7 +81,7 @@ static NSDictionary *operations;
 	NSS *command = operations[@(operation)];
 	command != nil && command.length > 0 ? [cmdLine addObject:command] : nil;
 	[cmdLine addObjectsFromArray:arguments];
-	return [NSA arrayWithArray:cmdLine];
+	return cmdLine.copy;
 }
 
 #pragma mark - TaskWrapperController methods
@@ -107,6 +116,11 @@ static NSDictionary *operations;
 		case BrewOperationUpdate:
 			if (self.delegate != nil && [self.delegate respondsToSelector:@selector(updateDidComplete:)])
 				[self.delegate updateDidComplete:currentOutput];
+			break;
+		case BrewOperationDesc:
+			NSLog(@"output:%@  class: %@", currentOutput, array)
+			if (self.delegate != nil && [self.delegate respondsToSelector:@selector(descDidComplete:)])
+				[self.delegate descDidComplete:[[currentOutput componentsSeparatedByString: @"\n"] objectAtIndex:0]];
 			break;
 		default:
 			break;
