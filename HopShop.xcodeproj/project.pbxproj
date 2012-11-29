@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1447491666A93C00B999EC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1447481666A93C00B999EC /* WebKit.framework */; };
 		7B9BB2F31664C735001B59F9 /* brew-desc.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F21664C735001B59F9 /* brew-desc.rb */; };
 		7B9BB2F71664E175001B59F9 /* descriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F61664E175001B59F9 /* descriptions.plist */; };
 		7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B1447481666A93C00B999EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		7B9BB2F21664C735001B59F9 /* brew-desc.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = "brew-desc.rb"; path = "brew-desc/brew-desc.rb"; sourceTree = SOURCE_ROOT; };
 		7B9BB2F61664E175001B59F9 /* descriptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = descriptions.plist; sourceTree = "<group>"; };
 		7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = FormulaDescriptions.h; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1447491666A93C00B999EC /* WebKit.framework in Frameworks */,
 				C78F3560154F73EA00834DE2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +131,7 @@
 		C78F3550154F73EA00834DE2 = {
 			isa = PBXGroup;
 			children = (
+				7B1447481666A93C00B999EC /* WebKit.framework */,
 				C7C6151B156DCDD700EB2CD5 /* Images */,
 				C7AA77B2155A82BD00F0016C /* HopShop.icns */,
 				C78F3565154F73EA00834DE2 /* HopShop */,

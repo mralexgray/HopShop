@@ -12,12 +12,16 @@ extern NSS * const NotificationUpdateCompleted;
 extern NSS * const NotificationOutputReceived;
 
 
-@interface Formula : NSObject <BrewDelegate>
+@interface Formula : BaseModel <BrewDelegate>
 
-@property (NATOM,STRNG) NSS *name, *version, *info, *desc;
-@property (NATOM) 		BOOL installed, outdated;
-@property (RONLY)   	NSAS *fancyDescription;
+@property (NATOM, STRNG) NSS *name, *version, *info, *desc, *url;
+
+@property (NATOM,ASS)	BOOL googleGenerated;
+@property (NATOM,ASS)	AZInstallationStatus installStatus;
+// 		BOOL installed, outdated,
+@property (NATOM,STRNG) NSAS *fancyDescription;
 
 - (id)initWithName: (NSS*)name;
+- (void)setDescFromGoogle:(NSString *)desc;
 
 @end

@@ -1,6 +1,5 @@
 
 
-#import <Cocoa/Cocoa.h>
 #import "Brew.h"
 
 @class OutputWindowViewController;
@@ -9,6 +8,7 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSToolbarItem *updateItem;
+
 
 + (HopShopAppDelegate*) delegate;
 

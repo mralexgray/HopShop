@@ -22,6 +22,7 @@
 @property (strong) 			NSMutableArray 		*availableFormulae;
 @property (assign) 			BOOL 				loading;
 
+@property (assign) IBOutlet WebView *webView;
 
 
 - (IBAction)updateFilter:(id)sender;

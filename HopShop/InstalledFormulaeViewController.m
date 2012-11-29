@@ -33,7 +33,7 @@
 	[installedFormulae removeAllObjects];
 	[arrayController addObjects:[formulae map:^id(id formulaName) {
 		Formula *formula = [[Formula alloc] initWithName:formulaName];
-		formula.installed = YES;
+		formula.installStatus = (formula.installStatus | AZInstalled);
 		Brew *brew = [[Brew alloc]initWithDelegate:formula];
 		[brew info:@[formula.name]];
 		return formula;
