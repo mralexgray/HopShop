@@ -20,10 +20,10 @@
 - (void) setUp
 {
 	NSLog(@"setting up FormulaDescriptions singleton!");
-	self.entriesToAdd = [NSMD dictionary];
-	self.savePath 	= [[NSB applicationSupportFolder]withPath:@"updatedDescriptions.plist"];
-	NSS *loadPath   = [AZFILEMANAGER fileExistsAtPath:_savePath] ? _savePath : [[NSB mainBundle]pathForResource:@"descriptions" ofType:@"plist"];
-	self.reference 	= [NSD dictionaryWithContentsOfFile:loadPath];
+	self.entriesToAdd 	= [NSMD dictionary];
+	self.savePath 		= [[NSB applicationSupportFolder]withPath:@"updatedDescriptions.plist"];
+	NSS *loadPath   	= [AZFILEMANAGER fileExistsAtPath:_savePath] ? _savePath : [[NSB mainBundle]pathForResource:@"descriptions" ofType:@"plist"];
+	self.reference 		= [NSD dictionaryWithContentsOfFile:loadPath];
 	[FormulaDescriptions setSharedInstance:self];
 }
 

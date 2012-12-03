@@ -4,24 +4,26 @@
 #import "Brew.h"
 #import "FormulaDescriptions.h"
 
-// Notifications
-extern NSS * const NotificationClearOutput;
-extern NSS * const NotificationInfoReceived;
-extern NSS * const NotificationFormulaeSelected;
-extern NSS * const NotificationUpdateCompleted;
-extern NSS * const NotificationOutputReceived;
+
+extern NSS*const NotificationClearOutput; extern NSS*const NotificationUpdateCompleted; extern NSS*const NotificationInfoReceived; extern NSS*const NotificationFormulaeSelected; extern NSS*const NotificationOutputReceived;
 
 
-@interface Formula : BaseModel <BrewDelegate>
+@interface    Formula : BaseModel   <BrewDelegate>
 
-@property (NATOM, STRNG) NSS *name, *version, *info, *desc, *url;
+@property (NATOM,STRNG) NSAS	     *fancyDesc;
 
-@property (NATOM,ASS)	BOOL googleGenerated;
-@property (NATOM,ASS)	AZInstallationStatus installStatus;
-// 		BOOL installed, outdated,
-@property (NATOM,STRNG) NSAS *fancyDescription;
+@property (NATOM,STRNG) NSS	   		   *url,
+									  *info,
+									  *name,
+									  *desc,
+								   *version;
 
-- (id)initWithName: (NSS*)name;
-- (void)setDescFromGoogle:(NSString *)desc;
+@property (NATOM)	BOOL    googleGenerated;
+
+@property (NATOM)	AZIS	installStatus;
+
+
+- (id)   initWithName: 		(NSS*)name;
+- (void) setDescFromGoogle: (NSS*)desc;
 
 @end

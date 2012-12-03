@@ -3,14 +3,6 @@
 #import <Cocoa/Cocoa.h>
 #import "Brew.h"
 
-@interface InstalledFormulaeViewController : NSViewController<BrewDelegate, NSTableViewDelegate>
-
-@property (strong) IBOutlet NSTableView 		*tableView;
-@property (strong) IBOutlet NSArrayController 	*arrayController;
-@property (strong) 			NSMutableArray 		*installedFormulae;
-@property (assign) 			BOOL loading;
-
-@end
 
 @interface AvailableFormulaeViewController : NSViewController
 										   < BrewDelegate,
@@ -23,7 +15,7 @@
 @property (assign) 			BOOL 				loading;
 
 @property (assign) IBOutlet WebView *webView;
-
+@property (assign) IBOutlet AZBackgroundProgressBar *bgPBar;
 
 - (IBAction)updateFilter:(id)sender;
 
@@ -33,7 +25,14 @@
 
 @property (strong) IBOutlet NSTextView *outputView;
 
-- (void)append:(NSS *)text;
-- (void)appendAttributedText:(NSAttributedString *)attributedText;
+- (void) clearOutput: 		  (NSNOT*)note;
+- (void) outputReceived: 	  (NSNOT*)note;
+- (void) formulaInfoReceived: (NSNOT*)note;
+- (void) formulaeSelected: 	  (NSNOT*)note;
+- (void) updateCompleted:  	  (NSNOT*)note;
+- (void) refreshViewWithFormulae;
+
+- (void) append:(NSS*) text;
+- (void) appendAttributedText:(NSAS*)attributedText;
 
 @end

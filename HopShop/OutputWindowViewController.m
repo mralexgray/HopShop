@@ -1,16 +1,9 @@
 
 
 #import "VisualControllers.h"
-#import "HopShopConstants.h"
 #import "Formula.h"
 
 @interface OutputWindowViewController ()
-- (void)clearOutput: 		 (NSNOT*)note;
-- (void)outputReceived: 	 (NSNOT*)note;
-- (void)formulaInfoReceived: (NSNOT*)note;
-- (void)formulaeSelected: 	 (NSNOT*)note;
-- (void)updateCompleted: 	 (NSNOT*)note;
-- (void)refreshViewWithFormulae;
 @end
 
 @implementation OutputWindowViewController
@@ -33,51 +26,38 @@ NSArray *formulae;
 	[self.outputView setString:@""];
 }
 
-- (void)outputReceived: (NSNOT*)note
-{
-	[self append:note.object];
-}
+- (void)outputReceived: (NSNOT*)note	{	[self append:note.object];	}
 
-- (void)append:(NSS *)text
-{
-	[self appendAttributedText:[[NSAS alloc] initWithString:text]];
+- (void)append:(NSS*)text { [self appendAttributedText:[NSAS.alloc initWithString:text]];
 }
 
 - (void)appendAttributedText:(NSAttributedString *)attributedText
 {
-	if (attributedText != nil)
-	{
-		NSMAS *attr = [[NSMAS alloc] initWithAttributedString:self.outputView.attributedString];
-		[attr appendAttributedString:attributedText];
-		[self.outputView.textStorage setAttributedString:attr];
-	}
+	if (!attributedText) return;
+	NSMAS *attr = [NSMAS.alloc initWithAttributedString:self.outputView.attributedString];
+	[attr appendAttributedString:attributedText];
+	self.outputView.textStorage.attributedString = attr;
 }
 
-- (void)formulaInfoReceived:(NSNOT*)note
-{
-	[self refreshViewWithFormulae];
-}
+- (void) formulaInfoReceived:(NSNOT*)note {	[self refreshViewWithFormulae]; }
 
-- (void)formulaeSelected:(NSNOT*)note
-{
-	formulae = [note.object copy];
-	[self refreshViewWithFormulae];
-}
+- (void) formulaeSelected:(NSNOT*)note    {	formulae = [note.object copy];
+											[self refreshViewWithFormulae]; }
 
-- (void)updateCompleted:(NSNOT*)note
-{
-	!outputView   ?: ^{
-		[self clearOutput:nil];
-		[self append:[note.object copy]];
-	}();
-}
+- (void) updateCompleted:(NSNOT*)note	  {	!outputView   ?: ^{
+											[self clearOutput:nil];
+											[self append:[note.object copy]]; }(); }
 
-- (void)refreshViewWithFormulae
+- (void) refreshViewWithFormulae			  {	!outputView && !formulae ?: ^{
+											[self clearOutput:nil];
+											[formulae do:^(Formula *formula){   [self appendAttributedText:formula.fancyDesc]; }];  }();   }
+
+
+
+- (BOOL)textView:(NSTextView *)aTextView clickedOnLink:(id)link atIndex:(NSUInteger)charIndex
 {
-	!outputView && !formulae ?: ^{
-		[self clearOutput:nil];
-		[formulae do:^(Formula *formula){ [self appendAttributedText:[formula fancyDescription]]; }];
-	}();
+	NSLog(@"TV did click on link : %@", link);
+	return YES;
 }
 
 @end

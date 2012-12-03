@@ -2,8 +2,20 @@
 
 #import "VisualControllers.h"
 #import "HopShopAppDelegate.h"
-#import "HopShopConstants.h"
+
 #import "Formula.h"
+
+
+
+@interface InstalledFormulaeViewController : NSViewController<BrewDelegate, NSTableViewDelegate>
+
+@property (strong) IBOutlet NSTableView 		*tableView;
+@property (strong) IBOutlet NSArrayController 	*arrayController;
+@property (strong) 			NSMutableArray 		*installedFormulae;
+@property (assign) 			BOOL loading;
+
+@end
+
 
 @interface InstalledFormulaeViewController ()
 - (void)updateInstalledFormulae;

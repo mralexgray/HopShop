@@ -12,14 +12,11 @@
 		7B9BB2F71664E175001B59F9 /* descriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F61664E175001B59F9 /* descriptions.plist */; };
 		7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */; };
 		C74875C4155480C600253576 /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F359E1550A8BC00834DE2 /* TaskWrapper.m */; };
-		C74875C71554862A00253576 /* InstalledFormulaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875C61554862A00253576 /* InstalledFormulaeViewController.m */; };
 		C74875CB1555188E00253576 /* AvailableFormulaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */; };
 		C74875CE1555236600253576 /* OutputWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875CD1555236600253576 /* OutputWindowViewController.m */; };
-		C75742911562BA4D00D038AB /* HopShopConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C75742901562BA4D00D038AB /* HopShopConstants.m */; };
 		C78F3560154F73EA00834DE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78F355F154F73EA00834DE2 /* Cocoa.framework */; };
 		C78F356A154F73EA00834DE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C78F3568154F73EA00834DE2 /* InfoPlist.strings */; };
 		C78F356C154F73EA00834DE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F356B154F73EA00834DE2 /* main.m */; };
-		C78F3570154F73EA00834DE2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C78F356E154F73EA00834DE2 /* Credits.rtf */; };
 		C78F3573154F73EA00834DE2 /* HopShopAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F3572154F73EA00834DE2 /* HopShopAppDelegate.m */; };
 		C78F3576154F73EA00834DE2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78F3574154F73EA00834DE2 /* MainMenu.xib */; };
 		C78F357E154F73EA00834DE2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78F357D154F73EA00834DE2 /* SenTestingKit.framework */; };
@@ -50,15 +47,13 @@
 /* Begin PBXFileReference section */
 		7B1447481666A93C00B999EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		7B9BB2F21664C735001B59F9 /* brew-desc.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = "brew-desc.rb"; path = "brew-desc/brew-desc.rb"; sourceTree = SOURCE_ROOT; };
-		7B9BB2F61664E175001B59F9 /* descriptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = descriptions.plist; sourceTree = "<group>"; };
-		7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = FormulaDescriptions.h; sourceTree = "<group>"; };
-		7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormulaDescriptions.m; sourceTree = "<group>"; };
+		7B9BB2F61664E175001B59F9 /* descriptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = descriptions.plist; path = HopShop/descriptions.plist; sourceTree = "<group>"; };
+		7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormulaDescriptions.h; path = HopShop/FormulaDescriptions.h; sourceTree = "<group>"; };
+		7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormulaDescriptions.m; path = HopShop/FormulaDescriptions.m; sourceTree = "<group>"; };
 		C74875C51554862A00253576 /* VisualControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = VisualControllers.h; sourceTree = "<group>"; };
 		C74875C61554862A00253576 /* InstalledFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstalledFormulaeViewController.m; sourceTree = "<group>"; };
 		C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableFormulaeViewController.m; sourceTree = "<group>"; };
 		C74875CD1555236600253576 /* OutputWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputWindowViewController.m; sourceTree = "<group>"; };
-		C757428F1562BA4D00D038AB /* HopShopConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HopShopConstants.h; sourceTree = "<group>"; };
-		C75742901562BA4D00D038AB /* HopShopConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HopShopConstants.m; sourceTree = "<group>"; };
 		C78F355B154F73EA00834DE2 /* HopShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78F355F154F73EA00834DE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C78F3562154F73EA00834DE2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -68,9 +63,8 @@
 		C78F3569154F73EA00834DE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C78F356B154F73EA00834DE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C78F356D154F73EA00834DE2 /* HopShop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HopShop-Prefix.pch"; sourceTree = "<group>"; };
-		C78F356F154F73EA00834DE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		C78F3571154F73EA00834DE2 /* HopShopAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HopShopAppDelegate.h; sourceTree = "<group>"; };
-		C78F3572154F73EA00834DE2 /* HopShopAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HopShopAppDelegate.m; sourceTree = "<group>"; };
+		C78F3571154F73EA00834DE2 /* HopShopAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HopShopAppDelegate.h; path = HopShop/HopShopAppDelegate.h; sourceTree = "<group>"; };
+		C78F3572154F73EA00834DE2 /* HopShopAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HopShopAppDelegate.m; path = HopShop/HopShopAppDelegate.m; sourceTree = "<group>"; };
 		C78F3575154F73EA00834DE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C78F357C154F73EA00834DE2 /* HopShopTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopShopTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78F357D154F73EA00834DE2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -86,13 +80,13 @@
 		C78F35A31550A96C00834DE2 /* Brew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brew.m; sourceTree = "<group>"; };
 		C78F35A61550A9DE00834DE2 /* BrewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewTests.h; sourceTree = "<group>"; };
 		C78F35A71550A9DE00834DE2 /* BrewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewTests.m; sourceTree = "<group>"; };
-		C7AA77B2155A82BD00F0016C /* HopShop.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HopShop.icns; sourceTree = "<group>"; };
-		C7C6152B156DCECD00EB2CD5 /* install.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = install.png; sourceTree = "<group>"; };
-		C7C6152C156DCECD00EB2CD5 /* uninstall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uninstall.png; sourceTree = "<group>"; };
-		C7C6152F156DCF4A00EB2CD5 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
-		C7C61531156DD19800EB2CD5 /* upgrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upgrade.png; sourceTree = "<group>"; };
-		C7D39EC41555D09500D603A7 /* Formula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula.h; sourceTree = "<group>"; };
-		C7D39EC51555D09500D603A7 /* Formula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula.m; sourceTree = "<group>"; };
+		C7AA77B2155A82BD00F0016C /* HopShop.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HopShop.icns; sourceTree = SOURCE_ROOT; };
+		C7C6152B156DCECD00EB2CD5 /* install.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = install.png; path = ../Images/install.png; sourceTree = "<group>"; };
+		C7C6152C156DCECD00EB2CD5 /* uninstall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uninstall.png; path = ../Images/uninstall.png; sourceTree = "<group>"; };
+		C7C6152F156DCF4A00EB2CD5 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = update.png; path = ../Images/update.png; sourceTree = "<group>"; };
+		C7C61531156DD19800EB2CD5 /* upgrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upgrade.png; path = ../Images/upgrade.png; sourceTree = "<group>"; };
+		C7D39EC41555D09500D603A7 /* Formula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Formula.h; path = HopShop/Formula.h; sourceTree = "<group>"; };
+		C7D39EC51555D09500D603A7 /* Formula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Formula.m; path = HopShop/Formula.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,25 +111,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B0E4A9A1667C23000CA1684 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7D39EC41555D09500D603A7 /* Formula.h */,
+				C7D39EC51555D09500D603A7 /* Formula.m */,
+				7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */,
+				7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C74875C81554863C00253576 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C74875C51554862A00253576 /* VisualControllers.h */,
-				C74875C61554862A00253576 /* InstalledFormulaeViewController.m */,
 				C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */,
 				C74875CD1555236600253576 /* OutputWindowViewController.m */,
 			);
 			name = ViewControllers;
+			path = HopShop;
 			sourceTree = "<group>";
 		};
 		C78F3550154F73EA00834DE2 = {
 			isa = PBXGroup;
 			children = (
-				7B1447481666A93C00B999EC /* WebKit.framework */,
-				C7C6151B156DCDD700EB2CD5 /* Images */,
-				C7AA77B2155A82BD00F0016C /* HopShop.icns */,
-				C78F3565154F73EA00834DE2 /* HopShop */,
-				C78F3582154F73EA00834DE2 /* HopShopTests */,
+				C74875C81554863C00253576 /* ViewControllers */,
+				C78F35A11550A8DF00834DE2 /* Services */,
+				7B0E4A9A1667C23000CA1684 /* Models */,
+				C78F3571154F73EA00834DE2 /* HopShopAppDelegate.h */,
+				C78F3572154F73EA00834DE2 /* HopShopAppDelegate.m */,
+				C78F3574154F73EA00834DE2 /* MainMenu.xib */,
+				C78F3566154F73EA00834DE2 /* Supporting Files */,
+				7B9BB2F61664E175001B59F9 /* descriptions.plist */,
 				C78F355E154F73EA00834DE2 /* Frameworks */,
 				C78F355C154F73EA00834DE2 /* Products */,
 			);
@@ -153,6 +161,7 @@
 		C78F355E154F73EA00834DE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B1447481666A93C00B999EC /* WebKit.framework */,
 				C78F355F154F73EA00834DE2 /* Cocoa.framework */,
 				C78F357D154F73EA00834DE2 /* SenTestingKit.framework */,
 				C78F3561154F73EA00834DE2 /* Other Frameworks */,
@@ -170,37 +179,25 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		C78F3565154F73EA00834DE2 /* HopShop */ = {
-			isa = PBXGroup;
-			children = (
-				C74875C81554863C00253576 /* ViewControllers */,
-				C78F35A11550A8DF00834DE2 /* Services */,
-				C78F3571154F73EA00834DE2 /* HopShopAppDelegate.h */,
-				C78F3572154F73EA00834DE2 /* HopShopAppDelegate.m */,
-				C78F3574154F73EA00834DE2 /* MainMenu.xib */,
-				C78F3566154F73EA00834DE2 /* Supporting Files */,
-				C7D39EC41555D09500D603A7 /* Formula.h */,
-				C7D39EC51555D09500D603A7 /* Formula.m */,
-				7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */,
-				7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */,
-				7B9BB2F21664C735001B59F9 /* brew-desc.rb */,
-				7B9BB2F61664E175001B59F9 /* descriptions.plist */,
-				C757428F1562BA4D00D038AB /* HopShopConstants.h */,
-				C75742901562BA4D00D038AB /* HopShopConstants.m */,
-			);
-			path = HopShop;
-			sourceTree = "<group>";
-		};
 		C78F3566154F73EA00834DE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C78F3567154F73EA00834DE2 /* HopShop-Info.plist */,
+				C74875C61554862A00253576 /* InstalledFormulaeViewController.m */,
+				C7C6151B156DCDD700EB2CD5 /* Images */,
+				C7C61531156DD19800EB2CD5 /* upgrade.png */,
+				C7C6152F156DCF4A00EB2CD5 /* update.png */,
+				C7C6152B156DCECD00EB2CD5 /* install.png */,
+				C7C6152C156DCECD00EB2CD5 /* uninstall.png */,
+				C7AA77B2155A82BD00F0016C /* HopShop.icns */,
+				C78F3582154F73EA00834DE2 /* HopShopTests */,
 				C78F3568154F73EA00834DE2 /* InfoPlist.strings */,
+				7B9BB2F21664C735001B59F9 /* brew-desc.rb */,
+				C78F3567154F73EA00834DE2 /* HopShop-Info.plist */,
 				C78F356B154F73EA00834DE2 /* main.m */,
 				C78F356D154F73EA00834DE2 /* HopShop-Prefix.pch */,
-				C78F356E154F73EA00834DE2 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			path = HopShop;
 			sourceTree = "<group>";
 		};
 		C78F3582154F73EA00834DE2 /* HopShopTests */ = {
@@ -214,7 +211,7 @@
 				C78F35A91550A9E300834DE2 /* Services */,
 			);
 			path = HopShopTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		C78F3583154F73EA00834DE2 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -234,6 +231,7 @@
 				C78F359E1550A8BC00834DE2 /* TaskWrapper.m */,
 			);
 			name = Services;
+			path = HopShop;
 			sourceTree = "<group>";
 		};
 		C78F35A91550A9E300834DE2 /* Services */ = {
@@ -248,12 +246,9 @@
 		C7C6151B156DCDD700EB2CD5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C7C61531156DD19800EB2CD5 /* upgrade.png */,
-				C7C6152F156DCF4A00EB2CD5 /* update.png */,
-				C7C6152B156DCECD00EB2CD5 /* install.png */,
-				C7C6152C156DCECD00EB2CD5 /* uninstall.png */,
 			);
-			path = Images;
+			name = Images;
+			path = ../Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,7 +324,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C78F356A154F73EA00834DE2 /* InfoPlist.strings in Resources */,
-				C78F3570154F73EA00834DE2 /* Credits.rtf in Resources */,
 				C78F3576154F73EA00834DE2 /* MainMenu.xib in Resources */,
 				C7AA77B3155A82BD00F0016C /* HopShop.icns in Resources */,
 				C7C6152D156DCECD00EB2CD5 /* install.png in Resources */,
@@ -376,11 +370,9 @@
 				C78F3573154F73EA00834DE2 /* HopShopAppDelegate.m in Sources */,
 				C78F35A41550A96C00834DE2 /* Brew.m in Sources */,
 				C74875C4155480C600253576 /* TaskWrapper.m in Sources */,
-				C74875C71554862A00253576 /* InstalledFormulaeViewController.m in Sources */,
 				C74875CB1555188E00253576 /* AvailableFormulaeViewController.m in Sources */,
 				C74875CE1555236600253576 /* OutputWindowViewController.m in Sources */,
 				C7D39EC61555D09500D603A7 /* Formula.m in Sources */,
-				C75742911562BA4D00D038AB /* HopShopConstants.m in Sources */,
 				7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,20 +406,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C78F356E154F73EA00834DE2 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C78F356F154F73EA00834DE2 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
 		C78F3574154F73EA00834DE2 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C78F3575154F73EA00834DE2 /* en */,
 			);
 			name = MainMenu.xib;
+			path = HopShop;
 			sourceTree = "<group>";
 		};
 		C78F3585154F73EA00834DE2 /* InfoPlist.strings */ = {

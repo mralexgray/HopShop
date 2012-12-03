@@ -2,7 +2,7 @@
 
 #import "VisualControllers.h"
 #import "HopShopAppDelegate.h"
-#import "HopShopConstants.h"
+
 #import "Formula.h"
 #import <AtoZ/AtoZ.h>
 

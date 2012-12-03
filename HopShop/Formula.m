@@ -24,21 +24,14 @@ static NSS *KeyOutdated = @"outdated";
 
 - (id)initWithName:(NSS *)name_
 {
-	if (!(self = [super init])) return nil;
-	self.name = name_;
-	self.installStatus = AZNotInstalled;
-//	[NSThread performBlockInBackground:^{
-	self.desc = [FormulaDescriptions descriptionForName:_name];
-//		 if (google) {
-//		 	[[NSThread mainThread] performBlock:^{
-//				self.desc = google.copy;
-//			} waitUntilDone:YES];
-//		}
-	
+	if (self != super.init ) return nil;
+	_name 			 = name_;
+	_installStatus = AZNotInstalled;
+	_desc	 			= [FormulaDescriptions descriptionForName:_name];
 	return self;
 }
 
-//- (id)initWithCoder:(NSCoder *)decoder 
+//- (id)initWithCoder:(NSCoder *)decoder
 //{
 //	if (!(self = [super init])) return nil;
 //	_desc = [decoder decodeObjectForKey:KeyDesc];
@@ -49,9 +42,9 @@ static NSS *KeyOutdated = @"outdated";
 ////	_installed = [[decoder decodeObjectForKey:KeyInstalled] boolValue];
 ////	_outdated = [[decoder decodeObjectForKey:KeyOutdated] boolValue];
 //	return self;
-//}	 
+//}
 
-//- (void)encodeWithCoder:(NSCoder *)encoder 
+//- (void)encodeWithCoder:(NSCoder *)encoder
 //{
 //	[encoder encodeObject:_name forKey:KeyName];
 //	[encoder encodeObject:_desc forKey:KeyDesc];
@@ -80,28 +73,27 @@ static NSS *KeyOutdated = @"outdated";
 	return [NSS stringWithFormat:@"%@ %@\n%@\n", self.name, (self.version == nil ? @"" : self.version), (self.info == nil ? @"" : self.info)];
 }
 
-- (NSAS *)fancyDescription
+- (NSAS *)fancyDesc
 {
 	static BOOL hadDesc, hadVersion;  hadDesc = hadVersion = NO;
-	return _fancyDescription =  hadVersion == (self.version != nil)  && hadDesc == (self.desc != nil) ? _fancyDescription : ^{
-		__block NSMAS *fancy = [[NSMAS alloc] initWithAttributedString:[[NSAS alloc] initWithString:self.name attributes:@{NSFontAttributeName: [AtoZ font:@"UbuntuMono-Bold" size:24], NSForegroundColorAttributeName: GREEN}]]; 	// Add the name
+	return _fancyDesc =  hadVersion == (self.version != nil)  && hadDesc == (self.desc != nil) ? _fancyDesc : ^{
+		__block NSMAS *fancy = [NSMAS.alloc initWithAttributedString:[NSAS.alloc initWithString:self.name attributes:@{NSFontAttributeName: [AtoZ font:@"UbuntuMono-Bold" size:24], NSForegroundColorAttributeName: GREEN}]]; 	// Add the name
 
-		!self.version ?: [fancy appendAttributedString:[[NSAS alloc] initWithString:$(@"\tversion: %@", self.version) attributes:@{NSFontAttributeName: [AtoZ font:@"UbuntuMono-Bold" size:18], NSForegroundColorAttributeName:GRAY8}]]; 	// Add the version
-		hadVersion = self.version != nil;
-		!self.desc    ?: [fancy appendAttributedString:[[NSAS alloc] initWithString:$(@"\nDescription: %@", self.desc) attributes:@{NSFontAttributeName: [AtoZ font:@"UbuntuMono-Bold" size:18], NSForegroundColorAttributeName:BLACK}]]; 	// Add the version
-		hadDesc    = self.desc    != nil;
-		!self.info    ?: ^{	// Add the info
-			NSMAS *fancyInfo = [[NSMAS alloc] initWithString:$(@"\n%@\n", self.info)];
-			__block int index = 1;  // Detect the URLs  // Skip the leading newline
-			[[self.info componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]each:^(NSS *word) {
+		!self.version ?: [fancy appendAttributedString:[NSAS.alloc initWithString:$(@"\tversion: %@", self.version) attributes:@{NSFontAttributeName: [AtoZ font:@"UbuntuMono-Bold" size:18], NSForegroundColorAttributeName:GRAY8}]]; 	// Add the version
+		!self.desc    ?: [fancy appendAttributedString:[NSAS.alloc initWithString:$(@"\nDescription: %@", self.desc) attributes:@{NSFontAttributeName: [AtoZ font:@"UbuntuMono-Bold" size:18], NSForegroundColorAttributeName:BLACK}]]; 	// Add the version
+		hadVersion    =  self.version != nil;
+		hadDesc       =  self.desc    != nil;
+		!self.info    ?: ^{																// Add the info
+			NSMAS *fancyInfo = [NSMAS.alloc initWithString:$(@"\n%@\n", self.info)];
+//			__block int index = 1;  // Detect the URLs  // Skip the leading newline
+			[[self.info componentsSeparatedByCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet] reduce:^id  (id memo, NSS*word) {
+//			// each:^(NSS *word) {
 				![word hasPrefix:@"http"] ?:
-					[fancyInfo addAttributes:@{			   NSFontNameAttribute: [AtoZ font:@"UbuntuMono-Bold" size:24],
-	//													   NSFontSizeAttribute: @22,
-												NSForegroundColorAttributeName: GRAY9,
-	//										     NSUnderlineStyleAttributeName: @(NSSingleUnderlineStyle),
-														   NSLinkAttributeName: word} range:NSMakeRange(index, [word length])];
-				index += [word length] + 1;
-			}];
+					[fancyInfo addAttributes:@{			   NSFontNameAttribute: [AtoZ font:@"UbuntuMono-Bold" size:24], // NSFontSizeAttribute: @22,
+												NSForegroundColorAttributeName: GRAY9,									// NSUnderlineStyleAttributeName: @(NSSingleUnderlineStyle),
+														   NSLinkAttributeName: word} range:NSMakeRange([memo intValue], word.length)];
+				return @( [memo intValue] + word.length + 1 );
+			} withInitialMemo:@1];
 			[fancy appendAttributedString:fancyInfo]; 		// Put in output
 		}();
 		return fancy;
