@@ -3,6 +3,26 @@
 #import "VisualControllers.h"
 #import "Formula.h"
 
+
+
+@interface OutputWindowViewController : NSViewController
+
+@property (strong) IBOutlet NSTextView *outputView;
+
+- (void) clearOutput: 		  (NSNOT*)note;
+- (void) outputReceived: 	  (NSNOT*)note;
+- (void) formulaInfoReceived: (NSNOT*)note;
+- (void) formulaeSelected: 	  (NSNOT*)note;
+- (void) updateCompleted:  	  (NSNOT*)note;
+- (void) refreshViewWithFormulae;
+
+- (void) append:(NSS*) text;
+- (void) appendAttributedText:(NSAS*)attributedText;
+
+@end
+
+
+
 @interface OutputWindowViewController ()
 @end
 

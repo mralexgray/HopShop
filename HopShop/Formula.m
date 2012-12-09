@@ -13,7 +13,6 @@ NSS * const NotificationOutputReceived   = @"notification_output_received";
 @end
 
 @implementation Formula
-@synthesize info = _info;
 
 static NSS *KeyName = @"name";
 static NSS *KeyDesc = @"desc";
@@ -22,12 +21,12 @@ static NSS *KeyInfo = @"info";
 static NSS *KeyInstallStatus = @"install";
 static NSS *KeyOutdated = @"outdated";
 
-- (id)initWithName:(NSS *)name_
+- (id)initWithName:(NSS *)name
 {
 	if (self != super.init ) return nil;
-	_name 			 = name_;
-	_installStatus = AZNotInstalled;
-	_desc	 			= [FormulaDescriptions descriptionForName:_name];
+	_name 			 	= name;
+	_installStatus 		= AZNotInstalled;
+	self.desc	 			= [FormulaDescriptions descriptionForFormula:self];
 	return self;
 }
 
@@ -59,8 +58,22 @@ static NSS *KeyOutdated = @"outdated";
 
 - (void)loadBrewInfo
 {
-	Brew *brew = [[Brew alloc] initWithDelegate:self];
-	[brew info:@[self.name]];
+	CWTask *y = [CWTask.alloc initWithExecutable:@"/bin/ls" andArguments:@"/Users/localadmin"
+									 atDirectory:nil];
+
+	[y launchTaskOnQueue:AZSharedSingleOperationQueue() withCompletionBlock:^(NSString *output, NSError *error) {
+
+	}
+	launchTaskOnQueue:AZSharedSingleOperationQueue()
+	 withCompletionBlock:(void)(^)(NSS *output, NSError *error){
+		 NSLog(@"%@", output)
+	 }];
+	
+
+	[AZSharedSingleOperationQueue() addOperation:
+	 [Brew.alloc initWithFormula:self operation:BrewOperationInfo]];
+//		[brew info:@[self.name]];
+//	}];
 }
 
 - (void)setDescFromGoogle:(NSString *)desc {
@@ -70,7 +83,7 @@ static NSS *KeyOutdated = @"outdated";
 
 - (NSS *)description
 {
-	return [NSS stringWithFormat:@"%@ %@\n%@\n", self.name, (self.version == nil ? @"" : self.version), (self.info == nil ? @"" : self.info)];
+	return [NSS stringWithFormat:@"%@ %@\n%@\n", self.name, (_version == nil ? @"" : self.version), (_info == nil ? @"" : self.info)];
 }
 
 - (NSAS *)fancyDesc
@@ -104,7 +117,7 @@ static NSS *KeyOutdated = @"outdated";
 
 - (NSS*) url
 {
-	return _url = _url ?: [[_info componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]filterOne:^BOOL(id object) {  return [(NSS*)object hasPrefix:@"http"];	}];
+	return _url = _url ?: [[_info componentsSeparatedByCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet]filterOne:^BOOL(id object) {  return [(NSS*)object hasPrefix:@"http"];	}];
 }
 
 #pragma mark - BrewDelegate methods
@@ -114,7 +127,7 @@ static NSS *KeyOutdated = @"outdated";
 		NSRange range = [output rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
 		if (range.location > 0)	{
 			self.info 		= [output substringFromIndex:(range.location + 1)];
-			self.version 	= [[[output substringToIndex:range.location] componentsSeparatedByString:@" "] lastObject];
+			self.version 	= [[output substringToIndex:range.location] componentsSeparatedByString:@" "].lastObject;
 	}	}();
 	[AZNOTCENTER postNotificationName:NotificationInfoReceived object:@[self]];
 }

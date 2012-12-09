@@ -1,10 +1,10 @@
 
 
 #import "HopShopAppDelegate.h"
-#import "VisualControllers.h"
-#import "Brew.h"
+#import "FormulaeViewController.h"
+//#import "Brew.h"
 //#import "HopShopConstants.h"
-#import "Formula.h"
+//#import "Formula.h"
 
 @implementation HopShopAppDelegate
 
@@ -13,19 +13,24 @@
 - (void) applicationWillTerminate:(NSNotification *)notification
 {
 	[[NSThread mainThread] performBlock:^{
-		[FormulaDescriptions saveNewEntriesToDisk];
+//		[FormulaDescriptions saveNewEntriesToDisk];
 	}waitUntilDone:YES];
 }
 //must Initialize the value transformers used throughout the application bindings
-+ (void)initialize{  [NSVT setValueTransformer:[AZInstallationStatusToImageTransformer new] forName:@"AZInstallationStatusToImageTransformer"];	}
++ (void)initialize
+{
+	[NSVT setValueTransformer:AZInstallationStatusToImageTransformer.new forName:@"AZInstallationStatusToImageTransformer"];
+}
 
 + (HopShopAppDelegate *)delegate
 {
-	return (HopShopAppDelegate *)[[NSApplication sharedApplication] delegate];
+	return (HopShopAppDelegate*)NSApplication.sharedApplication.delegate;
 }
+
 - (NSS *)pathForAppData
 {
-	NSS *folder = [@"~/Library/Application Support/HopShop/" stringByExpandingTildeInPath];
+//	NSS *folder = [@"~/Library/Application Support/HopShop/" stringByExpandingTildeInPath];
+	NSS *folder = [NSB applicationSupportFolder];
 	NSError *error;
 	if (![fm fileExistsAtPath:folder])
 		if (![fm createDirectoryAtPath:folder withIntermediateDirectories:YES attributes:nil error:&error])
@@ -37,25 +42,25 @@
 
 #pragma mark - BrewDelegate methods
 
-- (void)outputReceived:(NSS *)output
-{
-	[AZNOTCENTER postNotificationName:NotificationOutputReceived object:output];
-}
-
-- (void)updateDidComplete:(NSS *)output
-{
-	self.updateItem.enabled = YES;
-	[AZNOTCENTER postNotificationName:NotificationUpdateCompleted object:output];
-}
-
+//- (void)outputReceived:(NSS *)output
+//{
+//	[AZNOTCENTER postNotificationName:NotificationOutputReceived object:output];
+//}
+//
+//- (void)updateDidComplete:(NSS *)output
+//{
+//	self.updateItem.enabled = YES;
+//	[AZNOTCENTER postNotificationName:NotificationUpdateCompleted object:output];
+//}
+//
 #pragma mark - Toolbar Item handlers
 
-- (IBAction)brewUpdate:(id)sender
-{
-	[AZNOTCENTER postNotificationName:NotificationOutputReceived object:@"Updating . . ."];
-	self.updateItem.enabled = NO;
-	Brew *brew = [[Brew alloc] initWithDelegate:self];
-	[brew update];
-}
+//- (IBAction)brewUpdate:(id)sender
+//{
+//	[AZNOTCENTER postNotificationName:NotificationOutputReceived object:@"Updating . . ."];
+//	self.updateItem.enabled = NO;
+////	Brew *brew = [Brew.alloc initWithDelegate:self];
+////	[brew update];
+//}
 
 @end

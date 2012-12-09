@@ -19,11 +19,14 @@
 #import "TaskWrapper.h"
 
 @implementation TaskWrapper
+@synthesize controller, pathAddition, arguments, task;
 
 - (id)initWithController:(id <TaskWrapperController>)cont arguments:(NSA*)args appendPath:(NSS*)pathEnv
 {
 	if (self != super.init ) return nil;
-	controller 		= cont;		arguments 		= args;		pathAddition  	= pathEnv;
+	controller 		= cont;
+	arguments 		= args;
+	pathAddition  	= pathEnv;
 	return self;
 }
 
@@ -35,9 +38,7 @@
 {
 		// We first let the controller know that we are starting
 		[controller processStarted];
-		
 		task = NSTask.new;
-
 		if (pathAddition != nil) {
 			char* user = getenv("USER");
 			char* home = getenv("HOME");
@@ -73,7 +74,6 @@
 		// us via the callback registered above when we signed up as an observer.	The file handle will
 		// send a NSFileHandleReadCompletionNotification when it has data that is available.
 		[[task.standardOutput fileHandleForReading] readInBackgroundAndNotify];
-		
 		// launch the task asynchronously
 		[task launch];		
 }

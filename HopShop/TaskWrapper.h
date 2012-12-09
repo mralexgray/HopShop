@@ -1,3 +1,4 @@
+#import <AtoZ/AtoZ.h>
 /*	File:			TaskWrapper.h
 	Description:	 This class is a generalized process handling class that makes asynchronous interaction with an NSTask easier.	There is also a protocol designed to work in conjunction with the TaskWrapper class; your process controller should conform to this protocol.	TaskWrapper objects are one-shot (since NSTask is one-shot); if you need to run a task more than once, destroy/create new TaskWrapper objects.
  	Author:				EP & MCF
@@ -14,12 +15,11 @@
 @end
 
 @interface TaskWrapper : NSObject
-{
-		NSTask						*task;
-		id <TaskWrapperController>	controller;
-		NSArray						*arguments;
-		NSS 						*pathAddition;
-}
+@property (nonatomic, strong) NSTask	*task;
+@property id <TaskWrapperController>	controller;
+@property (nonatomic, strong) NSArray	*arguments;
+@property (nonatomic, strong) NSS		*pathAddition;
+
 // This is the designated initializer - pass in your controller and any task arguments.
 // The first argument should be the path to the executable to launch with the NSTask.
 - (id)initWithController:(id <TaskWrapperController>)controller arguments:(NSA*)args;

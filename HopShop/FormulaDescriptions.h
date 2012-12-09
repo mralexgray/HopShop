@@ -8,8 +8,10 @@
 
 #import <AtoZ/AtoZ.h>
 
+@class Formula;
 @interface FormulaDescriptions : BaseModel
 
++ (NSS*) descriptionForFormula:(Formula*)formula;
 + (NSS*) descriptionForName: (NSS*)name;
 + (NSS*) googleSearchFor:(NSS*)name;
 + (void) saveNewEntriesToDisk;

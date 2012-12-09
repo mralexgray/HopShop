@@ -21,7 +21,7 @@
 - (void) processStarted;
 @end
 
-typedef NS_ENUM(NSUI, BrewOperation) {
+typedef NS_ENUM(NSUI, BrewOperationType) {
 	BrewOperationNone = 0,
 	BrewOperationList,
 	BrewOperationSearch,
@@ -34,27 +34,28 @@ typedef NS_ENUM(NSUI, BrewOperation) {
 	BrewOperationDesc
 };
 
+@class Formula;
+@interface Brew : NSOperation <TaskWrapperController>
 
-@interface Brew : NSObject <TaskWrapperController>
+@property (NATOM) BOOL 			 	isRunning;
+@property (NATOM) BrewOperationType operation;
+@property (STRNG) NSS 				*currentOutput, *searchString;
+@property (STRNG) TaskWrapper 		*brewTask;
+@property id <BrewDelegate> 	delegate;
+@property     Formula 		*formula;
 
-@property (NATOM) BOOL 			 isRunning;
-@property (NATOM) BrewOperation  currentOperation;
-@property (STRNG) NSS 			*currentOutput;
-@property (STRNG) TaskWrapper 	*brewTask;
-@property (STRNG)id <BrewDelegate> delegate;
+- (id) initWithDelegate: (id<BrewDelegate>)delegate operation:(BrewOperationType)type;
+- (id) initWithFormula:  (Formula*)formula 			operation:(BrewOperationType)type;
 
-- (id)   initWithDelegate:(id<BrewDelegate>)delegate;
+//- (void) desc:		(NSS*)searchString;
+//- (void) search:	(NSS*)searchString;
+//- (void) list:		(NSA*)formulae;
+//- (void) install:	(NSA*)formulae;
+//- (void) uninstall:	(NSA*)formulae;
+//- (void) upgrade:	(NSA*)formulae;
+//- (void) info:		(NSA*)formulae;
+//- (void) update;
+//- (void) outdated;
 
-- (void) desc:		(NSS*)searchString;
-- (void) search:	(NSS*)searchString;
-- (void) list:		(NSA*)formulae;
-- (void) install:	(NSA*)formulae;
-- (void) uninstall:	(NSA*)formulae;
-- (void) upgrade:	(NSA*)formulae;
-- (void) info:		(NSA*)formulae;
-- (void) update;
-- (void) outdated;
-
-- (NSA*)buildCommandLine:(BrewOperation)operation arguments:(NSA*)arguments;
 
 @end

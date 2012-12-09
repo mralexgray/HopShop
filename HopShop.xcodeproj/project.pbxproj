@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7B1447491666A93C00B999EC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1447481666A93C00B999EC /* WebKit.framework */; };
-		7B9BB2F31664C735001B59F9 /* brew-desc.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F21664C735001B59F9 /* brew-desc.rb */; };
 		7B9BB2F71664E175001B59F9 /* descriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F61664E175001B59F9 /* descriptions.plist */; };
-		7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */; };
-		C74875C4155480C600253576 /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F359E1550A8BC00834DE2 /* TaskWrapper.m */; };
-		C74875CB1555188E00253576 /* AvailableFormulaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */; };
-		C74875CE1555236600253576 /* OutputWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875CD1555236600253576 /* OutputWindowViewController.m */; };
+		7BBCBAB71671048C00681F2B /* AtoZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBCBAA71671046F00681F2B /* AtoZ.framework */; };
+		7BBCBAB81671049900681F2B /* AtoZ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7BBCBAA71671046F00681F2B /* AtoZ.framework */; };
+		C74875CB1555188E00253576 /* FormulaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74875CA1555188E00253576 /* FormulaeViewController.m */; };
 		C78F3560154F73EA00834DE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78F355F154F73EA00834DE2 /* Cocoa.framework */; };
 		C78F356A154F73EA00834DE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C78F3568154F73EA00834DE2 /* InfoPlist.strings */; };
 		C78F356C154F73EA00834DE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F356B154F73EA00834DE2 /* main.m */; };
@@ -24,17 +22,78 @@
 		C78F3587154F73EA00834DE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C78F3585154F73EA00834DE2 /* InfoPlist.strings */; };
 		C78F358A154F73EA00834DE2 /* HopShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F3589154F73EA00834DE2 /* HopShopTests.m */; };
 		C78F359C1550767800834DE2 /* HopShopAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F359B1550767800834DE2 /* HopShopAppDelegateTests.m */; };
-		C78F35A41550A96C00834DE2 /* Brew.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F35A31550A96C00834DE2 /* Brew.m */; };
 		C78F35A81550A9DE00834DE2 /* BrewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F35A71550A9DE00834DE2 /* BrewTests.m */; };
 		C7AA77B3155A82BD00F0016C /* HopShop.icns in Resources */ = {isa = PBXBuildFile; fileRef = C7AA77B2155A82BD00F0016C /* HopShop.icns */; };
 		C7C6152D156DCECD00EB2CD5 /* install.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C6152B156DCECD00EB2CD5 /* install.png */; };
 		C7C6152E156DCECD00EB2CD5 /* uninstall.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C6152C156DCECD00EB2CD5 /* uninstall.png */; };
 		C7C61530156DCF4A00EB2CD5 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C6152F156DCF4A00EB2CD5 /* update.png */; };
 		C7C61532156DD19800EB2CD5 /* upgrade.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C61531156DD19800EB2CD5 /* upgrade.png */; };
-		C7D39EC61555D09500D603A7 /* Formula.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D39EC51555D09500D603A7 /* Formula.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7BBCBAA61671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B311951159B6D9E002134C4;
+			remoteInfo = AtoZ;
+		};
+		7BBCBAA81671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B82B81F15CB66D30026FE8C;
+			remoteInfo = "AtoZ Encyclopedia";
+		};
+		7BBCBAAA1671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B31B12615E9441D00802CD5;
+			remoteInfo = "AtoZ Entitlement";
+		};
+		7BBCBAAC1671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B39615915F04FD70065813F;
+			remoteInfo = AtoZTouch;
+		};
+		7BBCBAAE1671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B184EE515FCA98600696360;
+			remoteInfo = AtoZCLI;
+		};
+		7BBCBAB01671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7BDF568C1627695300041A42;
+			remoteInfo = AtoZTestBed;
+		};
+		7BBCBAB21671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7BB51EA1166D0BDE0051F2FA;
+			remoteInfo = AZCLI;
+		};
+		7BBCBAB41671046F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7BBCB9E51671018100681F2B;
+			remoteInfo = AZUmbrellaTestBed;
+		};
+		7BBCBABB1671085F00681F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B311950159B6D9E002134C4;
+			remoteInfo = AtoZ;
+		};
 		C78F3580154F73EA00834DE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C78F3552154F73EA00834DE2 /* Project object */;
@@ -44,15 +103,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7BBCBA19167103D800681F2B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7BBCBAB81671049900681F2B /* AtoZ.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7B1447481666A93C00B999EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		7B9BB2F21664C735001B59F9 /* brew-desc.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = "brew-desc.rb"; path = "brew-desc/brew-desc.rb"; sourceTree = SOURCE_ROOT; };
 		7B9BB2F61664E175001B59F9 /* descriptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = descriptions.plist; path = HopShop/descriptions.plist; sourceTree = "<group>"; };
 		7B9BB2F81664E83B001B59F9 /* FormulaDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormulaDescriptions.h; path = HopShop/FormulaDescriptions.h; sourceTree = "<group>"; };
 		7B9BB2F91664E83C001B59F9 /* FormulaDescriptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormulaDescriptions.m; path = HopShop/FormulaDescriptions.m; sourceTree = "<group>"; };
-		C74875C51554862A00253576 /* VisualControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = VisualControllers.h; sourceTree = "<group>"; };
+		7BB51DE7166CFD660051F2FA /* BrewOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewOperation.h; sourceTree = "<group>"; };
+		7BB51DE8166CFD660051F2FA /* BrewOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewOperation.m; sourceTree = "<group>"; };
+		7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AtoZ.xcodeproj; path = ../../AtoZ.framework/AtoZ/AtoZ.xcodeproj; sourceTree = "<group>"; };
+		C74875C51554862A00253576 /* FormulaeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormulaeViewController.h; sourceTree = "<group>"; };
 		C74875C61554862A00253576 /* InstalledFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstalledFormulaeViewController.m; sourceTree = "<group>"; };
-		C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableFormulaeViewController.m; sourceTree = "<group>"; };
+		C74875CA1555188E00253576 /* FormulaeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormulaeViewController.m; sourceTree = "<group>"; };
 		C74875CD1555236600253576 /* OutputWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputWindowViewController.m; sourceTree = "<group>"; };
 		C78F355B154F73EA00834DE2 /* HopShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78F355F154F73EA00834DE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -94,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBCBAB71671048C00681F2B /* AtoZ.framework in Frameworks */,
 				7B1447491666A93C00B999EC /* WebKit.framework in Frameworks */,
 				C78F3560154F73EA00834DE2 /* Cocoa.framework in Frameworks */,
 			);
@@ -122,12 +198,26 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		7BBCBA9C1671046F00681F2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BBCBAA71671046F00681F2B /* AtoZ.framework */,
+				7BBCBAA91671046F00681F2B /* AtoZ Encyclopedia.app */,
+				7BBCBAAB1671046F00681F2B /* AtoZ Entitlement.app */,
+				7BBCBAAD1671046F00681F2B /* libAtoZTouch.a */,
+				7BBCBAAF1671046F00681F2B /* AtoZCLI */,
+				7BBCBAB11671046F00681F2B /* AtoZTestBed.app */,
+				7BBCBAB31671046F00681F2B /* AZCLI */,
+				7BBCBAB51671046F00681F2B /* AZUmbrellaTestBed.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C74875C81554863C00253576 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C74875C51554862A00253576 /* VisualControllers.h */,
-				C74875CA1555188E00253576 /* AvailableFormulaeViewController.m */,
-				C74875CD1555236600253576 /* OutputWindowViewController.m */,
+				C74875C51554862A00253576 /* FormulaeViewController.h */,
+				C74875CA1555188E00253576 /* FormulaeViewController.m */,
 			);
 			name = ViewControllers;
 			path = HopShop;
@@ -161,6 +251,7 @@
 		C78F355E154F73EA00834DE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */,
 				7B1447481666A93C00B999EC /* WebKit.framework */,
 				C78F355F154F73EA00834DE2 /* Cocoa.framework */,
 				C78F357D154F73EA00834DE2 /* SenTestingKit.framework */,
@@ -182,6 +273,7 @@
 		C78F3566154F73EA00834DE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C74875CD1555236600253576 /* OutputWindowViewController.m */,
 				C74875C61554862A00253576 /* InstalledFormulaeViewController.m */,
 				C7C6151B156DCDD700EB2CD5 /* Images */,
 				C7C61531156DD19800EB2CD5 /* upgrade.png */,
@@ -225,6 +317,8 @@
 		C78F35A11550A8DF00834DE2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7BB51DE7166CFD660051F2FA /* BrewOperation.h */,
+				7BB51DE8166CFD660051F2FA /* BrewOperation.m */,
 				C78F35A21550A96C00834DE2 /* Brew.h */,
 				C78F35A31550A96C00834DE2 /* Brew.m */,
 				C78F359D1550A8BC00834DE2 /* TaskWrapper.h */,
@@ -258,6 +352,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C78F358D154F73EA00834DE2 /* Build configuration list for PBXNativeTarget "HopShop" */;
 			buildPhases = (
+				7BBCBA19167103D800681F2B /* CopyFiles */,
 				C78F3557154F73EA00834DE2 /* Sources */,
 				C78F3558154F73EA00834DE2 /* Frameworks */,
 				C78F3559154F73EA00834DE2 /* Resources */,
@@ -265,6 +360,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7BBCBABC1671085F00681F2B /* PBXTargetDependency */,
 			);
 			name = HopShop;
 			productName = HopShop;
@@ -310,6 +406,12 @@
 			mainGroup = C78F3550154F73EA00834DE2;
 			productRefGroup = C78F355C154F73EA00834DE2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7BBCBA9C1671046F00681F2B /* Products */;
+					ProjectRef = 7BBCBA1A167103F400681F2B /* AtoZ.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C78F355A154F73EA00834DE2 /* HopShop */,
@@ -317,6 +419,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7BBCBAA71671046F00681F2B /* AtoZ.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AtoZ.framework;
+			remoteRef = 7BBCBAA61671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAA91671046F00681F2B /* AtoZ Encyclopedia.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "AtoZ Encyclopedia.app";
+			remoteRef = 7BBCBAA81671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAAB1671046F00681F2B /* AtoZ Entitlement.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "AtoZ Entitlement.app";
+			remoteRef = 7BBCBAAA1671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAAD1671046F00681F2B /* libAtoZTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAtoZTouch.a;
+			remoteRef = 7BBCBAAC1671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAAF1671046F00681F2B /* AtoZCLI */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = AtoZCLI;
+			remoteRef = 7BBCBAAE1671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAB11671046F00681F2B /* AtoZTestBed.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AtoZTestBed.app;
+			remoteRef = 7BBCBAB01671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAB31671046F00681F2B /* AZCLI */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = AZCLI;
+			remoteRef = 7BBCBAB21671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7BBCBAB51671046F00681F2B /* AZUmbrellaTestBed.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AZUmbrellaTestBed.app;
+			remoteRef = 7BBCBAB41671046F00681F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C78F3559154F73EA00834DE2 /* Resources */ = {
@@ -330,7 +491,6 @@
 				C7C6152E156DCECD00EB2CD5 /* uninstall.png in Resources */,
 				C7C61530156DCF4A00EB2CD5 /* update.png in Resources */,
 				C7C61532156DD19800EB2CD5 /* upgrade.png in Resources */,
-				7B9BB2F31664C735001B59F9 /* brew-desc.rb in Resources */,
 				7B9BB2F71664E175001B59F9 /* descriptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,12 +528,7 @@
 			files = (
 				C78F356C154F73EA00834DE2 /* main.m in Sources */,
 				C78F3573154F73EA00834DE2 /* HopShopAppDelegate.m in Sources */,
-				C78F35A41550A96C00834DE2 /* Brew.m in Sources */,
-				C74875C4155480C600253576 /* TaskWrapper.m in Sources */,
-				C74875CB1555188E00253576 /* AvailableFormulaeViewController.m in Sources */,
-				C74875CE1555236600253576 /* OutputWindowViewController.m in Sources */,
-				C7D39EC61555D09500D603A7 /* Formula.m in Sources */,
-				7B9BB2FB1664E83C001B59F9 /* FormulaDescriptions.m in Sources */,
+				C74875CB1555188E00253576 /* FormulaeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +545,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7BBCBABC1671085F00681F2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AtoZ;
+			targetProxy = 7BBCBABB1671085F00681F2B /* PBXContainerItemProxy */;
+		};
 		C78F3581154F73EA00834DE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C78F355A154F73EA00834DE2 /* HopShop */;
@@ -485,7 +645,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Library/Frameworks/**",
+					"\"/Users/localadmin/Library/Developer/Xcode/DerivedData/AtoZ-hfqteqfcvjfinlajqwkydsqyzpiz/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
 				INFOPLIST_FILE = "HopShop/HopShop-Info.plist";
@@ -504,7 +667,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Library/Frameworks/**",
+					"\"/Users/localadmin/Library/Developer/Xcode/DerivedData/AtoZ-hfqteqfcvjfinlajqwkydsqyzpiz/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HopShop/HopShop-Prefix.pch";
 				INFOPLIST_FILE = "HopShop/HopShop-Info.plist";
